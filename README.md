@@ -1,0 +1,1 @@
+# manga_translator_project
