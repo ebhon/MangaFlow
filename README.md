@@ -105,20 +105,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Deployment
 
 The project is also available as a web application on Hugging Face Spaces. To deploy your own version:
-
-1. Create a new Space on Hugging Face:
-   - Go to https://huggingface.co/spaces
-   - Click "Create new Space"
-   - Choose "Streamlit" as the SDK
-   - Name your space
-
-2. Upload these files to your Space:
-   - `app.py`
-   - `requirements.txt`
-   - `best.pt` (your trained YOLO model)
-   - `.streamlit/config.toml`
-
-3. Configure environment variables in your Space settings:
-   - Add `DEEPL_API_KEY` if you want to use DeepL for translation
-
-The app will be automatically built and deployed. All processing is done in real-time and no images are stored.
