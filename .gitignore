@@ -17,6 +17,8 @@ debug_text/
 manga_translator/
 .streamlit/
 examples/
+deployment/
+original_code/
 
 # Ignore files
 manga_translation.log
