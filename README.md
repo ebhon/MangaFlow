@@ -2,7 +2,7 @@
 
 A powerful manga translation tool that combines custom-trained YOLO models for text bubble detection with OCR and translation capabilities. This project automatically detects text bubbles in manga pages, extracts the text, translates it, and seamlessly inserts the translations back into the original image.
 
-🔥 **Try it out**: [Live Demo on Hugging Face](https://huggingface.co/spaces/ebhon/RAW_manga_translator)
+🔥 **Try it out**: [Live Demo on Hugging Face](https://huggingface.co/spaces/ebhon/MangaFlow)
 
 ## Features
 
@@ -20,15 +20,24 @@ manga_translator_project/
 ├── images/                  # Input manga pages
 ├── translated_images/       # Output translated pages
 ├── font/                    # Custom fonts for text insertion
-├── manga_translator.ipynb   # code file
-└── requirements.txt         # Project dependencies
+├── manga_translator/        # Core package directory
+│   ├── __init__.py         # Package initialization
+│   ├── config.py           # Configuration settings
+│   ├── detection.py        # YOLO model and text detection
+│   ├── image_utils.py      # Image processing utilities
+│   ├── ocr.py             # OCR functionality
+│   ├── overlay.py         # Text overlay and formatting
+│   ├── text_utils.py      # Text processing utilities
+│   └── translation.py     # Translation handling
+├── main.py                 # Main execution script
+└── requirements.txt        # Project dependencies
 ```
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/ebhon/manga_translator_project.git
+git clone https://github.com/ebhon/MangaFlow.git
 cd manga-translator
 ```
 
@@ -39,15 +48,30 @@ pip install -r requirements.txt
 
 3. Download the custom YOLO model from [YOLO-manga-bubble-detector](https://github.com/ebhon/YOLO-manga-bubble-detector)
 
-4. Set up your DeepL API key (optional but recommended for better translations)
+4. Set up your DeepL API key:
+   - Create a `.env` file in the project root
+   - Add your DeepL API key: `DEEPL_API_KEY=your_api_key_here`
 
 ## Usage
 
 1. Place your manga pages in the `images` directory
-2. Run all the script on *.ipynb files
+2. Run the main script:
+```bash
+python main.py
+```
 3. Find translated pages in the `translated_images` directory
 
-Or try the [online demo](https://huggingface.co/spaces/ebhon/RAW_manga_translator) for single page translation!
+Or try the [online demo](https://huggingface.co/spaces/ebhon/MangaFlow) for single page translation!
+
+## Module Descriptions
+
+- **config.py**: Contains configuration settings and paths
+- **detection.py**: Handles YOLO model loading and text region detection
+- **image_utils.py**: Provides image processing and enhancement functions
+- **ocr.py**: Manages text extraction and validation
+- **overlay.py**: Handles text insertion and formatting
+- **text_utils.py**: Contains text processing and cleaning functions
+- **translation.py**: Manages translation services and post-processing
 
 ## Important Note on Translation Accuracy
 
@@ -94,7 +118,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Links
 
-- [Live Demo](https://huggingface.co/spaces/ebhon/RAW_manga_translator)
+- [Live Demo](https://huggingface.co/spaces/ebhon/MangaFlow)
 - [YOLO Model Repository](https://github.com/ebhon/YOLO-manga-bubble-detector)
 
 ## Acknowledgments
