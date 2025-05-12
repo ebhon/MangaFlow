@@ -14,7 +14,6 @@ images/
 output/
 translated_images/
 debug_text/
-manga_translator/
 .streamlit/
 examples/
 deployment/
